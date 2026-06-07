@@ -21,3 +21,52 @@ export function estimateProject(data){
   }
 
 }
+function estimateElectrical(data){
+
+  const property =
+    electricalRules[data.propertyType];
+
+  return {
+
+    service: "Electrical Wiring",
+
+    cableMeters:
+      property.cableMeters,
+
+    sockets:
+      property.sockets,
+
+    switches:
+      property.switches,
+
+    breakers:
+      property.breakers,
+
+    labourDays:
+      property.labourDays
+
+  };
+
+}
+
+function estimateSolar(data){
+
+  const setup =
+    solarRules[data.size];
+
+  return {
+
+    service: "Solar Installation",
+
+    battery:
+      setup.batteryCapacity,
+
+    inverter:
+      setup.inverter,
+
+    panels:
+      setup.panels
+
+  };
+
+}
